@@ -30,7 +30,7 @@ public class Staff {
         this.age = A;
     }
 
-    public String toString(String[] args) {
+    public String toString() {
         Staff obj = new Staff();
 
         obj.setName("Roberto Martinez");
@@ -38,7 +38,6 @@ public class Staff {
         obj.setAge(49);
 
         String output = obj.getRole() + " : " + obj.getName() + "(" + obj.getAge() + ")";
-
         return output;
     }
 }
