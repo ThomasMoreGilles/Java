@@ -3,6 +3,7 @@ public class Team {
     private String country;
     private int currentPoints;
     private String continent;
+    private String staff;
 
     public Team(String name, String country) throws Exception {
         if (name==null) throw new Exception("null name");

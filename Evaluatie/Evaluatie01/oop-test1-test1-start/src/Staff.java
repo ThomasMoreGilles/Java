@@ -45,14 +45,19 @@ public class Staff {
         Staff obj = new Staff();
 
         String initials = "";
-
-        String[] a = obj.getName().split(" ");
-        for (int i = 0; i < a.length; i++) {
-            a[i] = a[i].substring(0, 1);
-            if (a[i] == a[i].toUpperCase()) {
-                initials += a[i] + ".";
+        try {
+            String[] a = obj.getName().split(" ");
+            for (int i = 0; i < a.length; i++) {
+                a[i] = a[i].substring(0, 1);
+                if (a[i] == a[i].toUpperCase()) {
+                    initials += a[i] + ".";
+                }
             }
+            return initials;
         }
-        return initials;
+        catch(Exception e){
+            System.out.println("Creating initials failed. Check name spelling.");
+        }
+        return "";
     }
 }
