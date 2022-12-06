@@ -43,12 +43,10 @@ public class Staff {
 
     public String getInitials() {
         Staff obj = new Staff();
-        obj.setName("Roberto Martinez");
-        String fullName = obj.getName();
 
         String initials = "";
 
-        String[] a = fullName.split(" ");
+        String[] a = obj.getName().split(" ");
         for (int i = 0; i < a.length; i++) {
             a[i] = a[i].substring(0, 1);
             if (a[i] == a[i].toUpperCase()) {
@@ -56,9 +54,5 @@ public class Staff {
             }
         }
         return initials;
-    }
-
-    public static void main(String[] args) {
-        System.out.println();
     }
 }
