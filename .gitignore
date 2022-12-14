@@ -3,6 +3,11 @@
 .idea
 /intellij.iml
 
+/out
+/+libs
+/audio
+
+
 # dependencies
 /node_modules
 /.pnp
