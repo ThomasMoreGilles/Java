@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Evaluatie/Evaluatie.iml" filepath="$PROJECT_DIR$/Evaluatie/Evaluatie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labo/oop/oop-helpdesk/oop-helpdesk.iml" filepath="$PROJECT_DIR$/Labo/oop/oop-helpdesk/oop-helpdesk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labo/oop/oop-musicorganizer/oop-musicorganizer.iml" filepath="$PROJECT_DIR$/Labo/oop/oop-musicorganizer/oop-musicorganizer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labo/oop/oop-network/oop-network.iml" filepath="$PROJECT_DIR$/Labo/oop/oop-network/oop-network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labo/oop/oop-zuul/oop-zuul.iml" filepath="$PROJECT_DIR$/Labo/oop/oop-zuul/oop-zuul.iml" />
+    </modules>
+  </component>
+</project>
