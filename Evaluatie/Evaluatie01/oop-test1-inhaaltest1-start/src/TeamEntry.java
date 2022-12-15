@@ -5,9 +5,11 @@ public class TeamEntry {
 
     public static final int NICKNAME = 0;
     public static final int COUNTRY = 1;
-    public static final int POINTS = 2;
-    public static final int CONTINENT = 3;
-    private static final int NUMBER_OF_FIELDS = 4;
+    public static final int SIGN = 2;
+    public static final int POINTS = 3;
+    public static final int CONTINENT = 4;
+    public static final int LEAGUE = 5;
+    private static final int NUMBER_OF_FIELDS = 6;
 
     public TeamEntry(String lineTeam)
     {

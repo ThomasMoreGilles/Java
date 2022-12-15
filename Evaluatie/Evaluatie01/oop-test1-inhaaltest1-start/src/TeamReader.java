@@ -38,7 +38,7 @@ public class TeamReader {
             TeamReader tr = new TeamReader();
             for (TeamEntry te : tr.getEntries()) {
                 String[] teamData = te.getData();
-                System.out.println(teamData[TeamEntry.NICKNAME] + ", the team for " + teamData[TeamEntry.COUNTRY] + " has " + teamData[TeamEntry.POINTS] + " points");
+                System.out.println(teamData[TeamEntry.NICKNAME] + ", the team for " + teamData[TeamEntry.COUNTRY] + " (" + teamData[TeamEntry.SIGN] + ") has " + teamData[TeamEntry.POINTS] + " points");
             }
         } catch (Exception e) {
             e.printStackTrace();

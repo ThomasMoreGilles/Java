@@ -1,14 +1,12 @@
 public class Team {
     private String name;
     private String country;
+    private String sign;
     private int currentPoints;
     private String continent;
+    private String league;
 
-    public Team(String name, String country) throws Exception {
-        if (name==null) throw new Exception("null name");
-        if (name.trim().equals("")) throw new Exception("empty name");
-        if (country==null) throw new Exception("null country");
-        if (country.trim().equals("")) throw new Exception("empty country");
+    public Team(String name, String country) {
         this.name = name;
         this.country = country;
     }
@@ -41,7 +39,23 @@ public class Team {
         this.currentPoints = currentPoints;
     }
 
+    public String getSign() {
+        return sign;
+    }
+
+    public void setSign(String sign) {
+        this.sign = sign;
+    }
+
+    public String getLeague() {
+        return league;
+    }
+
+    public void setLeague(String league) {
+        this.league = league;
+    }
+
     public String toString() {
-        return name + ", team for " + country + " started with " + currentPoints + " points";
+        return name + ", team for " + country + " (" + sign + ") is a member of " + league + "-league";
     }
 }

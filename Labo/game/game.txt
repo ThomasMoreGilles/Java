@@ -1,0 +1,2 @@
+Mijn game zal een oneindig aantal kamers hebben. De speler geeft zijn naam op. Deze wordt opgeslagen en als je verliest krijg je een scorebord met high scores.
+In de game moet de gebruiker van kamer naar kamer door een deur. De deuren zijn op slot met een cijfercode. De gebruiker kan de juiste code vinden door een rekensom op te lossen. Er is een tijdslimiet als de speler naar de volgende kamer gaat krijgt die meer tijd. Als de tijd op is verliest de speler.
