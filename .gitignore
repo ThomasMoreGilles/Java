@@ -9,7 +9,7 @@
 +libs
 */audio
 ThomasMore.iml
-.gitignore
+
 *.iml
 # dependencies
 /node_modules
