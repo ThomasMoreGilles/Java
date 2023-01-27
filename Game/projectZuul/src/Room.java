@@ -1,11 +1,27 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class Room
-{
-    private String description;
-    private HashMap<String, Room> exits;
-    private ArrayList<Item> items;
+/**
+ * Class Room - a room in an adventure game.
+ *
+ * This class is part of the "World of Zuul" application.
+ * "World of Zuul" is a very simple, text based adventure game.
+ *
+ * A "Room" represents one location in the scenery of the game.  It is
+ * connected to other rooms via exits.  The exits are labelled north,
+ * east, south, west.  For each direction, the room stores a reference
+ * to the neighboring room, or null if there is no exit in that direction.
+ *
+ * @author  Michael Kölling and David J. Barnes
+ * @version 2011.07.31
+ */
+
+public class Room {
+    private final List<Item> items = new ArrayList<>();
+    private final String description;
+    private final Map<String, Room> exits = new HashMap<>();
 
     /**
      * Create a room described "description". Initially, it has
@@ -13,38 +29,27 @@ public class Room
      * "an open courtyard".
      * @param description The room's description.
      */
-    public Room(String description)
-    {
-        exits = new HashMap<>();
-        items = new ArrayList<>();
+    public Room(String description) {
         this.description = description;
     }
 
     public void addItem(Item item) {
-        if (item!=null) items.add(item);
+        if (item != null) items.add(item);
     }
 
     public boolean hasItem(String name) {
-        for(Item i : items) {
-            if (i.getName().equals(name)) return true;
-        }
-        return false;
+        return items.stream().anyMatch(i -> i.getName().equals(name));
     }
 
     public Item getItem(String name) {
-        int itemIndex = -1;
-        for(int i = 0; i < items.size(); i++) {
-            if (items.get(i).getName().equals(name)) {
-                itemIndex = i;
-                break;
-            }
+        Item item = items.stream()
+                .filter(i -> i.getName().equals(name))
+                .findFirst()
+                .orElse(null);
+        if (item != null && item.isMoveable()) {
+            items.removeIf(i -> i.getName().equals(name));
         }
-        if (itemIndex > -1) {
-            Item checkItem = items.get(itemIndex);
-            if (checkItem.isMoveable()) items.remove(itemIndex);
-            return checkItem;
-        }
-        return null;
+        return item;
     }
 
     public Room getExit(String direction) {
@@ -52,35 +57,33 @@ public class Room
     }
 
     public void setExit(String direction, Room room) {
-        if (room!=null) exits.put(direction, room);
+        if (room != null) {
+            exits.put(direction, room);
+        }
     }
 
     /**
      * @return The description of the room.
      */
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
     public String getLongDescription() {
-        String fullDescription = getDescription();
+        StringBuilder fullDescription = new StringBuilder(description);
         if (!items.isEmpty()) {
-            fullDescription += " which contains items:";
-            for(Item i : items)   {
-                fullDescription += System.lineSeparator() + "  " + i.getItemDescription();
+            fullDescription.append(" which contains items:");
+            for (Item i : items) {
+                fullDescription.append(System.lineSeparator())
+                        .append("  ")
+                        .append(i.getItemDescription());
             }
         }
-        fullDescription += System.lineSeparator() + getExitString();
-        return fullDescription;
+        fullDescription.append(System.lineSeparator()).append(getExitString());
+        return fullDescription.toString();
     }
 
     public String getExitString() {
-        String returnString = "Exits: ";
-        for (String exitString : exits.keySet()) {
-            returnString += exitString + " ";
-        }
-        return returnString;
+        return "Exits: " + String.join(" ", exits.keySet());
     }
-
 }
