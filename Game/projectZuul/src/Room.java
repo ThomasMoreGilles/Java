@@ -11,7 +11,7 @@ import java.util.HashMap;
  * connected to other rooms via exits.  The exits are labelled north, 
  * east, south, west.  For each direction, the room stores a reference
  * to the neighboring room, or null if there is no exit in that direction.
- * 
+ *
  * @author  Michael Kölling and David J. Barnes
  * @version 2011.07.31
  */
@@ -28,7 +28,7 @@ public class Room
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) 
+    public Room(String description)
     {
         exits = new HashMap<>();
         items = new ArrayList<>();

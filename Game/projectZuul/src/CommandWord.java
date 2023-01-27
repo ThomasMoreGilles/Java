@@ -1,3 +1,21 @@
 public enum CommandWord {
-    GO, TAKE, DROP, LOOK, EAT, QUIT, HELP, UNKNOWN
+    GO("go"),
+    TAKE("take"),
+    DROP("drop"),
+    LOOK("look"),
+    EAT("eat"),
+    QUIT("quit", "exit"),
+    HELP("?", "help"),
+    UNKNOWN("");
+
+    private String[] commands;
+
+    CommandWord(String... commands) {
+        this.commands = commands;
+    }
+
+    public String[] getCommands() {
+        return commands;
+    }
 }
+
