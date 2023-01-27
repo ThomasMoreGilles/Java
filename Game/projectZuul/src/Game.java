@@ -1,19 +1,4 @@
-/**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
- *  to make it more interesting!
- *
- *  To play this game, create an instance of this class and call the "play"
- *  method.
- *
- *  This main class creates and initialises all the others: it creates all
- *  rooms, creates the parser and starts the game.  It also evaluates and
- *  executes the commands that the parser returns.
- *
- * @author  Michael Kölling and David J. Barnes
- * @version 2011.07.31
- */
+import java.util.Scanner;
 
 public class Game
 {
@@ -25,7 +10,10 @@ public class Game
      */
     public Game()
     {
-        player = new Player("Ahmet Yusuf");
+        System.out.print("What is your name? ");
+        Scanner scanner = new Scanner(System.in);
+        String playerName = scanner.nextLine();
+        player = new Player(playerName);
         createRooms();
         parser = new Parser();
     }
@@ -166,11 +154,12 @@ public class Game
         }
     }
 
+
     // implementations of user commands:
 
     /**
      * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the 
+     * Here we print some stupid, cryptic message and a list of the
      * command words.
      */
     private void printHelp()
