@@ -27,7 +27,7 @@ public class Parser
      */
     public Parser() 
     {
-        commands = new CommandWords();
+        commands = new AdventureCommandWords ();
         reader = new Scanner(System.in);
     }
 

@@ -1,13 +1,16 @@
+import java.util.Objects;
+
 public class Item {
-    private String name;
-    private String description;
-    private double weight;
-    private boolean moveable = true;
+    private final String name;
+    private final String description;
+    private final double weight;
+    private boolean moveable;
 
     public Item(String name, String description, double weight) {
-        this.name = name;
-        this.description = description;
+        this.name = Objects.requireNonNull(name);
+        this.description = Objects.requireNonNull(description);
         this.weight = weight;
+        this.moveable = true;
     }
 
     public boolean isMoveable() {
@@ -22,27 +25,15 @@ public class Item {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
     public String getItemDescription() {
-        return name + " (" + description + ") with weight of " + weight + "kg";
+        return String.format("%s (%s) with weight of %.2f kg", name, description, weight);
     }
 }
