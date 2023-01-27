@@ -1,4 +1,4 @@
-#   Manual for my World of Zuul wordgame.
+#   Handleiding voor mijn World of Zuul game.
 
     Het spel kan gestart worden door de main methode uit te voeren in de 'Game' klasse
 
